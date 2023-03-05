@@ -1,8 +1,8 @@
 import $ from 'jquery';
 
 export default {
-    mounted(){
-        console.info("[mangodoc-imgview] mounted")
+    ready(){
+        console.info("[mangodoc-imgview] ready")
         setTimeout(() => {
           let overlayEl = $('<div class="overlay" style="display: none;"></div>');
           let overlayImageEl = $('<img src="" alt="overlay image">');
