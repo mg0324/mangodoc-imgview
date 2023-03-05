@@ -1,6 +1,6 @@
 {
   "name": "mangodoc-imgview",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "mangodoc imgview plugin",
   "main": "src",
   "unpkg": "dist/mangodoc-imgview.min.js",
@@ -8,7 +8,7 @@
   "repository": "git@github.com:mg0324/mangodoc-imgview.git",
   "files": [
     "dist/",
-    "demo.png"
+    "demo.jpeg"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

@@ -1,9 +1,10 @@
 # mangodoc-imgview
 mangodoc imgview plugin，集成imgview插件！
+支持手机端手指缩放，并上下左右移动！good job!
 
 [![npm](https://img.shields.io/npm/v/mangodoc-plugin-toc.svg?style=flat-square)](https://www.npmjs.com/package/mangodoc-imgview)
 
-![示例](demo.png)
+![示例](demo.jpeg)
 
 
 ## Usage

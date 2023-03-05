@@ -8,8 +8,12 @@ export default {
           const overlay = document.querySelector(".overlay");
           const overlayImage = overlay.querySelector("img");
           var mc = new Hammer(overlayImage);
-          var currentScale = 1;
-          var lastScale = 1;
+          let currentScale = 1;
+          let lastScale = 1;
+          let currentX = 0;
+          let currentY = 0;
+          let lastX = 0;
+          let lastY = 0;
           images.forEach((image) => {
             image.addEventListener("click", () => {
               overlayImage.src = image.src;
@@ -18,12 +22,22 @@ export default {
               $(overlay).show();
               // 监听 Hammer.js 事件
               mc.add(new Hammer.Pinch());
-              mc.on("pinchstart", function() {
+              mc.add(new Hammer.Pan({ direction: Hammer.DIRECTION_ALL }));
+              mc.on("pinchstart", () => {
                 lastScale = currentScale;
               });
-              mc.on("pinchmove", function(ev) {
+              mc.on("pinchmove", (ev) => {
                 currentScale = lastScale * ev.scale;
-                overlayImage.style.transform = "scale(" + currentScale + ")";
+                overlayImage.style.transform = "scale(" + currentScale + ") translate(" + currentX + "px, " + currentY + "px)";
+              });
+              mc.on("panstart", () => {
+                lastX = currentX;
+                lastY = currentY;
+              });
+              mc.on("panmove", (ev) => {
+                currentX = lastX + ev.deltaX;
+                currentY = lastY + ev.deltaY;
+                overlayImage.style.transform = "scale(" + currentScale + ") translate(" + currentX + "px, " + currentY + "px)";
               });
             });
           });
