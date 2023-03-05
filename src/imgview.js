@@ -4,9 +4,13 @@ export default {
     mounted(){
         console.info("[mangodoc-imgview] mounted")
         setTimeout(() => {
+          let overlayEl = $('<div class="overlay" style="display: none;"></div>');
+          let overlayImageEl = $('<img src="" alt="overlay image">');
+          overlayImageEl.appendTo(overlayEl);
+          overlayEl.appendTo($("body"));
           const images = document.querySelectorAll("#app img");
-          const overlay = document.querySelector(".overlay");
-          const overlayImage = overlay.querySelector("img");
+          const overlay = overlayEl.get(0);
+          const overlayImage = overlayImageEl.get(0);
           var mc = new Hammer(overlayImage);
           let currentScale = 1;
           let lastScale = 1;
