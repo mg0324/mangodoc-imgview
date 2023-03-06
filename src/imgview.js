@@ -1,10 +1,11 @@
 import $ from 'jquery';
 
 export default {
-    ready(){
-        console.info("[mangodoc-imgview] ready")
+    mounted(){
+        console.info("[mangodoc-imgview] mounted")
         setTimeout(() => {
-          let overlayEl = $('<div class="overlay" style="display: none;"></div>');
+          $("#overlay-img").remove();
+          let overlayEl = $('<div id="overlay-img" class="overlay" style="display: none;"></div>');
           let overlayImageEl = $('<img src="" alt="overlay image">');
           overlayImageEl.appendTo(overlayEl);
           overlayEl.appendTo($("body"));
@@ -50,6 +51,6 @@ export default {
             $(overlay).hide();
             $(overlayImage).hide();
           });
-        }, 1000); 
+        }, 2000); 
     }
 }
