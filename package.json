@@ -1,6 +1,6 @@
 {
   "name": "mangodoc-imgview",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "mangodoc imgview plugin",
   "main": "src",
   "unpkg": "dist/mangodoc-imgview.min.js",

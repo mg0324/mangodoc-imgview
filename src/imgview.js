@@ -9,7 +9,7 @@ export default {
           let overlayImageEl = $('<img src="" alt="overlay image">');
           overlayImageEl.appendTo(overlayEl);
           overlayEl.appendTo($("body"));
-          const images = document.querySelectorAll("#app img");
+          const images = document.querySelectorAll("#container img");
           const overlay = overlayEl.get(0);
           const overlayImage = overlayImageEl.get(0);
           var mc = new Hammer(overlayImage);
